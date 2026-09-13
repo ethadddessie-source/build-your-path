@@ -406,6 +406,7 @@ function Index() {
   const [duzenlenen, setDuzenlenen] = useState<Talebe | null>(null);
   const [profilGoster, setProfilGoster] = useState<Talebe | null>(null);
   const [profilAidattan, setProfilAidattan] = useState(false);
+  const [profilDetayli, setProfilDetayli] = useState(false);
   const [duzenleAidattan, setDuzenleAidattan] = useState(false);
   const [duzenleSayfaOdakli, setDuzenleSayfaOdakli] = useState(false);
   const [hocaDuzenle, setHocaDuzenle] = useState(false);

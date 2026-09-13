@@ -215,6 +215,8 @@ const SOZLUK = {
     sfPerHafta: "sf/hafta",
     telefon: "Telefon",
     notlar: "Notlar",
+    sinif: "Sınıf",
+    dogumTarihi: "Doğum tarihi",
     ara: "Ara",
     isimVeIlerleme: "İsim & ilerleme",
     fotoBuyutGorunum: "Büyütülmüş fotoğraf görünümü.",

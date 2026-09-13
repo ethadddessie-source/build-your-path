@@ -2035,6 +2035,7 @@ function ProfilDiyalog({
   talebe,
   hocaModu,
   kiraatGizli = false,
+  detayliAlanlar = false,
   onClose,
   onDuzenle,
   onFotoDegistir,
@@ -2044,6 +2045,7 @@ function ProfilDiyalog({
   talebe: Talebe | null;
   hocaModu: boolean;
   kiraatGizli?: boolean;
+  detayliAlanlar?: boolean;
   onClose: () => void;
   onDuzenle: (t: Talebe) => void;
   onFotoDegistir: (t: Talebe, fotoUrl: string) => void;

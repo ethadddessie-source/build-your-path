@@ -215,6 +215,8 @@ const SOZLUK = {
     sfPerHafta: "sf/hafta",
     telefon: "Telefon",
     notlar: "Notlar",
+    sinif: "Sınıf",
+    dogumTarihi: "Doğum tarihi",
     ara: "Ara",
     isimVeIlerleme: "İsim & ilerleme",
     fotoBuyutGorunum: "Büyütülmüş fotoğraf görünümü.",
@@ -406,6 +408,7 @@ function Index() {
   const [duzenlenen, setDuzenlenen] = useState<Talebe | null>(null);
   const [profilGoster, setProfilGoster] = useState<Talebe | null>(null);
   const [profilAidattan, setProfilAidattan] = useState(false);
+  const [profilDetayli, setProfilDetayli] = useState(false);
   const [duzenleAidattan, setDuzenleAidattan] = useState(false);
   const [duzenleSayfaOdakli, setDuzenleSayfaOdakli] = useState(false);
   const [hocaDuzenle, setHocaDuzenle] = useState(false);
@@ -1207,6 +1210,7 @@ function Index() {
                                 type="button"
                                 onClick={() => {
                                   setProfilAidattan(true);
+                                  setProfilDetayli(true);
                                   setProfilGoster(t);
                                 }}
                                 className="inline-flex items-center justify-center"
@@ -1221,6 +1225,7 @@ function Index() {
                                 type="button"
                                 onClick={() => {
                                   setProfilAidattan(true);
+                                  setProfilDetayli(true);
                                   setProfilGoster(t);
                                 }}
                                 className="block w-full min-w-0 truncate text-left text-[11px] hover:text-primary hover:underline sm:text-sm"
@@ -1277,6 +1282,7 @@ function Index() {
                   hocaModu={hocaModu}
                   onTalebe={(t) => {
                     setProfilAidattan(true);
+                    setProfilDetayli(false);
                     setProfilGoster(t);
                   }}
                   grupFiltre={grupFiltre}
@@ -1403,6 +1409,7 @@ function Index() {
                               type="button"
                               onClick={() => {
                                 setProfilAidattan(false);
+                                setProfilDetayli(false);
                                 setProfilGoster(t);
                               }}
                               className="group flex w-full min-w-0 items-center gap-1 text-left text-xs hover:text-primary sm:gap-2 sm:text-sm"
@@ -1503,6 +1510,7 @@ function Index() {
           onTalebe={(t) => {
             setVermediAcik(false);
             setProfilAidattan(false);
+            setProfilDetayli(false);
             setProfilGoster(t);
           }}
         />
@@ -1516,6 +1524,7 @@ function Index() {
           onTalebe={(t) => {
             setRaporAcik(false);
             setProfilAidattan(false);
+            setProfilDetayli(false);
             setProfilGoster(t);
           }}
         />
@@ -1973,6 +1982,7 @@ function Index() {
           }
           hocaModu={hocaModu}
           kiraatGizli={profilAidattan}
+          detayliAlanlar={profilDetayli}
           onClose={() => setProfilGoster(null)}
           onDuzenle={(t) => {
             setProfilGoster(null);
@@ -2027,6 +2037,7 @@ function ProfilDiyalog({
   talebe,
   hocaModu,
   kiraatGizli = false,
+  detayliAlanlar = false,
   onClose,
   onDuzenle,
   onFotoDegistir,
@@ -2036,6 +2047,7 @@ function ProfilDiyalog({
   talebe: Talebe | null;
   hocaModu: boolean;
   kiraatGizli?: boolean;
+  detayliAlanlar?: boolean;
   onClose: () => void;
   onDuzenle: (t: Talebe) => void;
   onFotoDegistir: (t: Talebe, fotoUrl: string) => void;
@@ -2234,6 +2246,35 @@ function ProfilDiyalog({
             </div>
 
             <div className="mt-1 space-y-2">
+              {detayliAlanlar && (
+                <div className="grid grid-cols-2 gap-2">
+                  <div className="space-y-1.5">
+                    <Label className="flex items-center gap-1.5 text-sm">
+                      <GraduationCap className="h-3.5 w-3.5" /> {t("sinif")}
+                    </Label>
+                    <Input
+                      value={sinif}
+                      onChange={(e) => setSinif(e.target.value.slice(0, 40))}
+                      disabled={!hocaModu}
+                      placeholder="—"
+                      className="text-base"
+                    />
+                  </div>
+                  <div className="space-y-1.5">
+                    <Label className="flex items-center gap-1.5 text-sm">
+                      <CalendarDays className="h-3.5 w-3.5" /> {t("dogumTarihi")}
+                    </Label>
+                    <Input
+                      type="date"
+                      value={dogum}
+                      onChange={(e) => setDogum(e.target.value)}
+                      disabled={!hocaModu}
+                      className="text-base"
+                    />
+                  </div>
+                </div>
+              )}
+
 
 
               <div className="space-y-1.5">

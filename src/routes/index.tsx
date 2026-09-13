@@ -1280,6 +1280,7 @@ function Index() {
                   hocaModu={hocaModu}
                   onTalebe={(t) => {
                     setProfilAidattan(true);
+                    setProfilDetayli(false);
                     setProfilGoster(t);
                   }}
                   grupFiltre={grupFiltre}

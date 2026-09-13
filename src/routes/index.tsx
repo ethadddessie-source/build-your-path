@@ -1508,6 +1508,7 @@ function Index() {
           onTalebe={(t) => {
             setVermediAcik(false);
             setProfilAidattan(false);
+            setProfilDetayli(false);
             setProfilGoster(t);
           }}
         />

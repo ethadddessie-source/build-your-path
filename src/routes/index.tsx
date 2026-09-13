@@ -1407,6 +1407,7 @@ function Index() {
                               type="button"
                               onClick={() => {
                                 setProfilAidattan(false);
+                                setProfilDetayli(false);
                                 setProfilGoster(t);
                               }}
                               className="group flex w-full min-w-0 items-center gap-1 text-left text-xs hover:text-primary sm:gap-2 sm:text-sm"

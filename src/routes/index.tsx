@@ -1223,6 +1223,7 @@ function Index() {
                                 type="button"
                                 onClick={() => {
                                   setProfilAidattan(true);
+                                  setProfilDetayli(true);
                                   setProfilGoster(t);
                                 }}
                                 className="block w-full min-w-0 truncate text-left text-[11px] hover:text-primary hover:underline sm:text-sm"

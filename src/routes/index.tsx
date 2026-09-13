@@ -2244,6 +2244,35 @@ function ProfilDiyalog({
             </div>
 
             <div className="mt-1 space-y-2">
+              {detayliAlanlar && (
+                <div className="grid grid-cols-2 gap-2">
+                  <div className="space-y-1.5">
+                    <Label className="flex items-center gap-1.5 text-sm">
+                      <GraduationCap className="h-3.5 w-3.5" /> {t("sinif")}
+                    </Label>
+                    <Input
+                      value={sinif}
+                      onChange={(e) => setSinif(e.target.value.slice(0, 40))}
+                      disabled={!hocaModu}
+                      placeholder="—"
+                      className="text-base"
+                    />
+                  </div>
+                  <div className="space-y-1.5">
+                    <Label className="flex items-center gap-1.5 text-sm">
+                      <CalendarDays className="h-3.5 w-3.5" /> {t("dogumTarihi")}
+                    </Label>
+                    <Input
+                      type="date"
+                      value={dogum}
+                      onChange={(e) => setDogum(e.target.value)}
+                      disabled={!hocaModu}
+                      className="text-base"
+                    />
+                  </div>
+                </div>
+              )}
+
 
 
               <div className="space-y-1.5">

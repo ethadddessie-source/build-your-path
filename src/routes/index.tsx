@@ -2234,30 +2234,7 @@ function ProfilDiyalog({
             </div>
 
             <div className="mt-1 space-y-2">
-              {kiraatGizli && (
-                <>
-                  <div className="space-y-1.5">
-                    <Label className="flex items-center gap-1.5 text-sm">Sınıf</Label>
-                    <Input
-                      value={sinif}
-                      onChange={(e) => setSinif(e.target.value.slice(0, 40))}
-                      disabled={!hocaModu}
-                      placeholder="—"
-                      className="text-base"
-                    />
-                  </div>
-                  <div className="space-y-1.5">
-                    <Label className="flex items-center gap-1.5 text-sm">Doğum tarihi</Label>
-                    <Input
-                      type="date"
-                      value={dogum}
-                      onChange={(e) => setDogum(e.target.value)}
-                      disabled={!hocaModu}
-                      className="text-base"
-                    />
-                  </div>
-                </>
-              )}
+
 
               <div className="space-y-1.5">
                 <Label className="flex items-center gap-1.5 text-sm">

@@ -431,6 +431,15 @@ function Index() {
   const [aidatListeAcik, setAidatListeAcik] = useState(false);
   const gruplar = useGruplar();
   const [grupTaslak, setGrupTaslak] = useState<GrupBilgi[] | null>(null);
+  const [yeniTalebeAcik, setYeniTalebeAcik] = useState<null | "hafiz" | "aidat">(null);
+  const [yeniTalebe, setYeniTalebe] = useState({
+    isim: "",
+    sinif: "",
+    dogum: "",
+    telefon: "",
+    notlar: "",
+    grup: "",
+  });
 
   const [vermediAcik, setVermediAcik] = useState(false);
 

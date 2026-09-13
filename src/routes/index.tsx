@@ -1522,6 +1522,7 @@ function Index() {
           onTalebe={(t) => {
             setRaporAcik(false);
             setProfilAidattan(false);
+            setProfilDetayli(false);
             setProfilGoster(t);
           }}
         />

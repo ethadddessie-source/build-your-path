@@ -1208,6 +1208,7 @@ function Index() {
                                 type="button"
                                 onClick={() => {
                                   setProfilAidattan(true);
+                                  setProfilDetayli(true);
                                   setProfilGoster(t);
                                 }}
                                 className="inline-flex items-center justify-center"

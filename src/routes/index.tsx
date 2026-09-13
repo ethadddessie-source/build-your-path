@@ -1980,6 +1980,7 @@ function Index() {
           }
           hocaModu={hocaModu}
           kiraatGizli={profilAidattan}
+          detayliAlanlar={profilDetayli}
           onClose={() => setProfilGoster(null)}
           onDuzenle={(t) => {
             setProfilGoster(null);
